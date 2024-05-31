@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tugas Akhir</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+  <style>
+    body {
+      background-color: rgb(58, 149, 207);
+    }
+
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    p {
+      color: #fff;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 50px auto;
+      padding: 40px 0;
+      width: 1000px;
+      box-sizing: border-box;
+    }
+
+    .timeline:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: #c5c5c5;
+    }
+
+    .timeline ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .timeline ul li {
+      list-style: none;
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
+
+    .timeline ul li:nth-child(odd) {
+      float: left;
+      text-align: right;
+      clear: both;
+    }
+
+    .timeline ul li:nth-child(even) {
+      float: right;
+      text-align: left;
+      clear: both;
+    }
+
+    .content {
+      padding-bottom: 20px;
+    }
+
+    .timeline ul li:nth-child(odd):before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 24px;
+      right: -6px;
+      background: rgb(33, 186, 233);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgb(206, 41, 33);
+    }
+
+    .timeline ul li:nth-child(even):before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 24px;
+      left: -4px;
+      background: rgb(206, 41, 33);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
+    }
+
+    .timeline ul li h3 {
+      padding: 0;
+      margin: 0;
+      color: rgb(206, 41, 33);
+      font-weight: 600;
+    }
+
+    .timeline ul li p {
+      margin: 10px 0 0;
+      padding: 0;
+    }
+
+    .timeline ul li .time h4 {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    .timeline ul li:nth-child(odd) .time {
+      position: absolute;
+      top: 12px;
+      right: -165px;
+      margin: 0;
+      padding: 8px 16px;
+      background: rgb(206, 41, 33);
+      color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+    }
+
+    .timeline ul li:nth-child(even) .time {
+      position: absolute;
+      top: 12px;
+      left: -165px;
+      margin: 0;
+      padding: 8px 16px;
+      background: rgb(206, 41, 33);
+      color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+    }
+
+    @media(max-width:1000px) {
+      .timeline {
+        width: 100%;
+      }
+    }
+
+    @media(max-width:767px) {
+      .timeline {
+        width: 100%;
+        padding-bottom: 0;
+      }
+
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .timeline:before {
+        left: 20px;
+        height: 100%;
+      }
+
+      .timeline ul li:nth-child(odd),
+      .timeline ul li:nth-child(even) {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        padding-bottom: 50px;
+      }
+
+      .timeline ul li:nth-child(odd):before,
+      .timeline ul li:nth-child(even):before {
+        top: -18px;
+        left: 16px;
+      }
+
+      .timeline ul li:nth-child(odd) .time,
+      .timeline ul li:nth-child(even) .time {
+        top: -30px;
+        left: 50px;
+        right: inherit;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- navbar mulai-->
+  <div class="header">
+    <div class="container-fluid gx-0">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/img/logoo.png" alt="Bootstrap" width="120px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: white;"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link fw-bold " aria-current="page" href="index.html"
+                  style="color: white; margin-right: 2rem;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold " href="karakter.html" style="color: white; margin-right: 2rem;">karakter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="cerita.html" style="color: white; margin-right: 2rem;">cerita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="organisasi.html"
+                  style="color: white; margin-right: 2rem;">organisasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="about.html" style="color: white;">about</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- narbar selesai -->
+
+    <h1>Jalan Cerita</h1>
+    <div class="timeline">
+      <ul>
+        <li>
+          <div class="content">
+            <h3>East Blue Saga</h3>
+            <p>Dipengaruhi oleh Shanks, Luffy memulai perjalanannya untuk menjadi raja bajak laut. Di awal
+              perjalanannya, ia bertemu dengan seorang bocah lelaki bernama Koby yang ingin menjadi Angkatan Laut.
+              Mereka mencapai Kota Shells di mana mereka bertemu dengan kapten Angkatan Laut yang korup Tangan Kapak
+              Morgan, anaknya Helmeppo, dan pemburu bajak laut Roronoa Zoro.</p>
+          </div>
+          <div class="time">
+            <h4>October 20, 1999</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Alabasta Saga</h3>
+            <p>Kerajaan Alabasta adalah kerajaan gurun di Paradise. Itu adalah tempat keempat yang dikunjungi Bajak Laut
+              Topi Jerami di Grand Line, dan kejadian di sini mengakibatkan harga bounty Luffy dinaikkan menjadi
+              Berry100,000,000, dan Zoro mendapatkan harga buronan Berry60,000,000.
+              Di situlah poneglyph yang menunjukkan lokasi Pluton berada, dan salah satu dari dua puluh negara
+              pendiri Pemerintah Dunia.</p>
+          </div>
+          <div class="time">
+            <h4>December 16, 2001</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Skypiea Saga</h3>
+            <p>Skypiea adalah sebuah pulau yang terletak di langit di atas Paradise.Ini adalah latar utama dari Arc
+              Skypiea, dan pulau keenam yang dikunjungi oleh Bajak Laut Topi Jerami di Grand Line.</p>
+          </div>
+          <div class="time">
+            <h4>February 9, 2003</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Water 7 Saga</h3>
+            <p>Water 7 adalah sebuah kota yang terletak di Paradise dan terkenal terkenal karena keahlian para pembuat
+              kapal yang tinggal di sana. Perusahaan Galley-La, merupakan perusahaan pembuat kapal terbesar di dunia
+              sehingga banyak dari Bajak Laut datang ke tempat ini untuk memperbaiki kapal maupun untuk membeli kapal
+              baru. Iceburg merupakan wali kota Water 7 sekaligus menjabat sebagai presiden dari perusahaan Galley-La.
+            </p>
+          </div>
+          <div class="time">
+            <h4>April 17, 2005</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Thriller Bark Saga</h3>
+            <p>Thriller Bark adalah kapal raksasa yang berada di Segitiga Florian. Seperti diungkapkan oleh Brook, kapal
+              ini berupa pulau yang berada di West Blue kemudian diubah menjadi kapal bajak laut terbesar di dunia, dan
+              dimiliki oleh mantan Shichibukai, Gekko Moriah.</p>
+          </div>
+          <div class="time">
+            <h4>January 6, 2008 </h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Sabaody arc</h3>
+            <p>Kepulauan Sabaody adalah pulau terakhir di Paradise, dekat dengan Red Line. Meskipun disebut
+              kepulauan, sebenarnya ini adalah hutan mangrove yang tumbuh dari tengah lautan dengan setiap pohon di
+              hutan berfungsi sebagai "pulau" tempat tinggal manusia. Karena itu hanya sekelompok pohon dan bukan
+              sebuah pulau seperti yang ditemukan di Grand Line, ia tidak memiliki tarikan magnet yang dapat
+              mempengaruhi Log Pose.
+
+            </p>
+          </div>
+          <div class="time">
+            <h4>December 21, 2008</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Amazon Lily arc</h3>
+            <p>Amazon Lily adalah kerajaan yang berlokasi di Pulau Wanita (女ヶ島 Nyōga shima?, Pulau Gadis di FUNimation
+              sub), sebuah pulau di Calm Belt berdekatan dengan Paradise. Pulau ini diisi oleh suku Kuja. Kerajaan ini
+              diberi nama sesuai dengan nama sebuah bunga Amazon Lily. Monkey D. Luffy dikirim ke tempat ini oleh Kuma.
+            </p>
+          </div>
+          <div class="time">
+            <h4>July 5, 2009</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Impel Down arc</h3>
+            <p>Impel Down juga dikenal sebagai Penjara Bawah Laut (海底大監獄 Kaitei Dai Kangoku?) adalah penjara keamanan
+              penuh milik Pemerintah Dunia untuk para penjahat dan bajak laut yang paling berbahaya. Impel Down terletak
+              di bawah laut di tengah Calm Belt.</p>
+          </div>
+          <div class="time">
+            <h4>October 18, 2009</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Marineford arc</h3>
+            <p>Marineford adalah pulau dari Markas Besar Angkatan Laut, di mana sekarang basis angkatan laut G-1
+              terletak. Ini adalah tempat di mana mantan Laksamana Armada Sengoku dan tiga laksamana lainnya tinggal,
+              bersama dengan banyak wakil laksamana dan pejabat yang lebih rendah ketika mereka tidak ditugaskan ke
+              basis lain. Kota sekitarnya markas Marinir dihuni oleh keluarga tentara Marinir.
+
+              Hal ini terletak di dekat Kepulauan Sabaody, dan meletakkan langsung di sebelah Mariejois di jalur merah.
+              Satu-satunya cara yang aman untuk mencapai Marineford adalah melalui Gerbang Keadilan. Namun, setelah
+              Pertempuran Marineford, lokasi dari Markas Marinir dipertukarkan dengan Kelautan Basis G-1.</p>
+          </div>
+          <div class="time">
+            <h4>July 27, 2010</h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Fishman Island arc</h3>
+            <p>Pulau Manusia Ikan adalah sebuah pulau bawah laut tempat tinggal bagi bangsa manusia ikan. Pulau ini
+              merupakan pintu masuk menuju Dunia Baru selain melewati Marijoa. Sebelum Time-skip, Pulau Gyojin berada di
+              bawah lindungan Bajak Laut Shirohige, namun sekarang dilindungi oleh Bajak Laut Big Mom karena adanya
+              urusan bisnis permen. Untuk mencapai pulau ini sangatlah susah, terbukti dengan hanya 30% kapal yang bisa
+              sampai ke sana.</p>
+          </div>
+          <div class="time">
+            <h4>October 2, 2011 </h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Punk Hazard arc</h3>
+            <p>Punk Hazard (パンクハザード島 Panku Hazādo-tō?) adalah sebuah pulau yang terletak di Dunia Baru dan merupakan
+              pulau pertama yang disinggahi oleh Kelompok Topi Jerami (setelah menerima panggilan darurat dari seseorang
+              di pulau) setelah tiba di Dunia Baru. Menurut Trafalgar Law, Pulau ini tidak mungkin ditunjukkan oleh
+              "log". Pulau ini juga merupakan dimana Akainu dan Aokiji berjuang untuk posisi Laksamana Armada selama
+              sepuluh hari. Pulau ini relatif dekat dengan Dressrosa, perjalanan antara dua pulau dapat dilakukan dalam
+              waktu singkat.</p>
+          </div>
+          <div class="time">
+            <h4>January 6, 2013 </h4>
+          </div>
+        </li>
+
+        <li>
+          <div class="content">
+            <h3>Dressrosa arc</h3>
+            <p>Dressrosa adalah sebuah pulau mewah dengan pohon-pohon palem, kolam renang, dan sebuah puri Spanyol-gaya
+              besar dengan penampilan campuran dari sebuah rumah berpilar.</p>
+          </div>
+          <div class="time">
+            <h4>January 19, 2014/h4>
+          </div>
+        </li>
+        <li>
+          <div class="content">
+            <h3>Zou arc</h3>
+            <p>Zou adalah sebuah pulau terletak di belakang Naitamie-Norida elephant bernama Zunesha yang
+              berkeliaran di Dunia Baru. Hal ini dikenal sebagai "Pulau Hantu" (幻の島 Maboroshi no Shima?) karena Log
+              Pose tidak dapat menunjuk ke sana. Itu adalah rumah bagi Mokomo Dukedom dari Suku Mink serta di mana
+              Bajak Laut Hati tinggal sambil menunggu kapten mereka kembali dari Dressrosa.</p>
+          </div>
+          <div class="time">
+            <h4>January 19, 2014/h4>
+          </div>
+        </li>
+        <li>
+          <div class="content">
+            <h3>Whole Cake Island arc</h3>
+            <p>Whole Cake Island adalah pulau Dunia Baru di bawah kendali Big Mom, sebelumnya salah satu dari Empat
+              Kaisar. Ini adalah basis operasi krunya dan pulau tengah di kepulauan 35 pulau Big Mom yang dikenal
+              sebagai Totto Land. </p>
+          </div>
+          <div class="time">
+            <h4>April 9, 2017 </h4>
+          </div>
+        </li>
+        <li>
+          <div class="content">
+            <h3>Wano Country arc</h3>
+            <p>Negeri Wano adalah negara isolasionis yang kuat di Dunia Baru yang tidak berafiliasi dengan Pemerintah
+              Dunia. Saat ini berada di bawah kekuasaan shogunnya, Kurozumi Orochi, serta diduduki oleh Bajak Laut
+              Beasts di bawah Kaido. Sebelumnya, Wano diperintah oleh Keluarga Kozuki sampai perampas keluarga,
+              Orochi, berkonspirasi dengan Kaido untuk menggulingkan shogun mereka 18 tahun sebelum awal cerita.
+              Ratusan tahun yang lalu, itu dikenal sebagai Negara Emas (黄金の国 Ōgon no Kuni?).</p>
+          </div>
+          <div class="time">
+            <h4>July 7, 2019</h4>
+          </div>
+        </li>
+        <div style="clear:both;"></div>
+      </ul>
+    </div>
+
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+      <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <p class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/"
+              aria-label="Bootstrap">
+              <span class="fs-5">Tugas Akhir</span>
+            </p>
+            <ul class="list-unstyled small">
+              <li class="mb-2">Ahmad Muzakki Aley</a></li>
+              <li class="mb-2">41226430</a></li>
+              <li class="mb-2">TI REG P2</li>
+              <li class="mb-2"><a href="http://123456789">Whatsapp</a></li>
+
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="/">Home</a></li>
+              <li class="mb-2"><a href="/karakter.html">karakter</li>
+              <li class="mb-2"><a href="/cerita.html">Cerita</a></li>
+              <li class="mb-2"><a href="/organisasi.html">Organisasi</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Source</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="https://onepiece.fandom.com/id/wiki/Halaman_Utama">onepiece.fandom</a></li>
+              <li class="mb-2"><a href="https://id.wikipedia.org/wiki/wikipedia">Onepiece.wikipedia</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-4 mb-3">
+            <h5>Situs Resmi</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="https://github.com/twbs/bootstrap" target="_blank" rel="noopener">Web One
+                  Piece</a> - Situs resmi One Piece.</li>
+              <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev" target="_blank"
+                  rel="noopener">One Piece Official</a> - FUNimation situs resmi One Piece.</li>
+              <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank" rel="noopener">One Piece
+                  Anime</a> - Toei Animation situs resmi anime One Piece.</li>
+              <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank" rel="noopener">One Piece Manga</a>
+                - situs resmi manga One Piece Jepang.</li>
+              <li class="mb-2"><a href="https://github.com/twbs/examples/" target="_blank" rel="noopener">One Piece
+                  Manga</a> - Viz Media situs resmi manga One Piece.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+</body>
+
+</html>

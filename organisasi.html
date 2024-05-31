@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas Akhir</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(231, 173, 57);
+        }
+
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            color: #000000;
+        }
+
+        p {
+            color: #000000;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 50px auto;
+            padding: 40px 0;
+            width: 1000px;
+            box-sizing: border-box;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #c5c5c5;
+        }
+
+        .timeline ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline ul li {
+            list-style: none;
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .timeline ul li:nth-child(odd) {
+            float: left;
+            text-align: right;
+            clear: both;
+        }
+
+        .timeline ul li:nth-child(even) {
+            float: right;
+            text-align: left;
+            clear: both;
+        }
+
+        .content {
+            padding-bottom: 20px;
+        }
+
+        .timeline ul li:nth-child(odd):before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 24px;
+            right: -6px;
+            background: rgb(33, 186, 233);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgb(206, 41, 33);
+        }
+
+        .timeline ul li:nth-child(even):before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 24px;
+            left: -4px;
+            background: rgb(206, 41, 33);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
+        }
+
+        .timeline ul li h3 {
+            padding: 0;
+            margin: 0;
+            color: rgb(206, 41, 33);
+            font-weight: 600;
+        }
+
+        .timeline ul li p {
+            margin: 10px 0 0;
+            padding: 0;
+        }
+
+        .timeline ul li .time h4 {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .timeline ul li:nth-child(odd) .time {
+            position: absolute;
+            top: 12px;
+            right: -165px;
+            margin: 0;
+            padding: 8px 16px;
+            background: rgb(206, 41, 33);
+            color: #fff;
+            border-radius: 18px;
+            box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+        }
+
+        .timeline ul li:nth-child(even) .time {
+            position: absolute;
+            top: 12px;
+            left: -165px;
+            margin: 0;
+            padding: 8px 16px;
+            background: rgb(206, 41, 33);
+            color: #fff;
+            border-radius: 18px;
+            box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+        }
+
+        @media(max-width:1000px) {
+            .timeline {
+                width: 100%;
+            }
+        }
+
+        @media(max-width:767px) {
+            .timeline {
+                width: 100%;
+                padding-bottom: 0;
+            }
+
+            h1 {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .timeline:before {
+                left: 20px;
+                height: 100%;
+            }
+
+            .timeline ul li:nth-child(odd),
+            .timeline ul li:nth-child(even) {
+                width: 100%;
+                text-align: left;
+                padding-left: 50px;
+                padding-bottom: 50px;
+            }
+
+            .timeline ul li:nth-child(odd):before,
+            .timeline ul li:nth-child(even):before {
+                top: -18px;
+                left: 16px;
+            }
+
+            .timeline ul li:nth-child(odd) .time,
+            .timeline ul li:nth-child(even) .time {
+                top: -30px;
+                left: 50px;
+                right: inherit;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar mulai-->
+    <div class="header">
+        <div class="container-fluid gx-0">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="/img/logoo.png" alt="Bootstrap" width="120px"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" style="color: white;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold " aria-current="page" href="index.html"
+                                    style="color: white; margin-right: 2rem;">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold " href="karakter.html"
+                                    style="color: white; margin-right: 2rem;">karakter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="cerita.html"
+                                    style="color: white; margin-right: 2rem;">cerita</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="organisasi.html"
+                                    style="color: white; margin-right: 2rem;">organisasi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="about.html" style="color: white;">about</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- narbar selesai -->
+
+        <div class="container py-3">
+            <div class="title h1 text-center">Organisasi di Serial One Piece</div>
+            <!-- Card Start -->
+            <div class="card">
+                <div class="row ">
+
+                    <div class="col-md-7 px-3">
+                        <div class="card-block px-6">
+                            <h4 class="card-title">Yonkou, 4 Kaisar</h4>
+                            <p class="card-text">
+                                Empat Kaisar, yang merupakan salah satu dari Tiga Kekuatan Besar, adalah sekelompok
+                                empat bajak laut yang dianggap sebagai kapten paling terkenal dan kuat di dunia. Saat
+                                ini, Kaisar adalah Shanks Rambut Merah, Blackbeard, Luffy Topi Jerami, dan Buggy si
+                                Badut Bintang; Whitebeard, Big Mom, dan Kaidou dari Binatang Buas adalah mantan anggota
+                                yang dikenal.
+
+                                Empat Kaisar biasanya bukan sekutu, juga bukan musuh satu sama lain. Sebaliknya,
+                                keempatnya lebih memilih untuk tetap otonom dalam banyak situasi. Kaisar secara historis
+                                tinggal di paruh kedua Grand Line (dikenal sebagai "Dunia Baru"), memberikan pengaruh
+                                dan kendali yang mengesankan atas lusinan kru bajak laut lainnya dan pulau-pulau yang
+                                memiliki pemerintahan sendiri. Dibandingkan dengan individu dan kelompok antagonis yang
+                                dihadapi Bajak Laut Topi Jerami di seri sebelumnya, Kaisar menjadi ancaman yang jauh
+                                lebih besar selama paruh kedua seri One Piece (terutama di Saga Pulau Kue Utuh dan Saga
+                                Negeri Wano, di mana Big Mom dan Kaidou berperan sebagai masing-masing antagonis utama).
+
+                                Dalam Perang Puncak Marineford yang menentukan, Shirohige menemui ajalnya menjelang
+                                klimaks perang. Meskipun Kaidou ingin ikut campur dalam perang, dia dihentikan oleh
+                                Shanks, yang kemudian tiba di Marineford dan menengahi gencatan senjata.[8][9] Mantan
+                                bawahan dan pembunuh Shirohige, Blackbeard, kemudian merebut posisinya pada tahun
+                                berikutnya.
+
+                                Dua tahun setelah perang, mengikuti peristiwa Arc Pulau Kue Utuh, the Koran Berita
+                                Ekonomi Dunia menyebut Monkey D. Luffy berdiri berdekatan dengan Empat Kaisar sebagai
+                                "Kaisar Kelima" laut. Ini karena peristiwa busur dan wawancara yang dilakukan dengan
+                                Cavendish dan Bartolomeo, yang memberi tahu wartawan tentang Armada Besar Topi Jerami
+                                yang beranggotakan 5.640 orang. Kemudian, setelah kekalahan masing-masing dari
+                                Kaidou dan Big Mom pada akhir Penyerbuan di Onigashima, Luffy dan Buggy dipublikasikan
+                                sebagai Kaisar baru untuk menggantikan mereka. </p>
+                            <br>
+                        </div>
+                    </div>
+                    <!-- Carousel start -->
+                    <div class="col-md-5">
+                        <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
+                                <li data-target="#CarouselTest" data-slide-to="1"></li>
+                                <li data-target="#CarouselTest" data-slide-to="2"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="container" src="/img/Yonko_Infobox.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of carousel -->
+                </div>
+            </div>
+            <!-- End of card -->
+
+        </div>
+
+        <div class="container">
+            <div class="card float-left">
+                <div class="row ">
+                    <div class="col-sm-7">
+                        <div class="card-block">
+                            <h4 class="card-title">Angkatan Laut</h4>
+                            <p>Angkatan Laut (海軍 Kaigun?), adalah kekuatan militer utama Pemerintah Dunia yang bertugas
+                                menjaga keamanan lautan terutama dari gangguan bajak laut. Mereka hadir di seluruh
+                                belahan dunia dengan markas-markas cabang, namun lebih memusatkan kekuatannya di Grand
+                                Line. Bersama Shichibukai dan Yonko, ketiganya berperan menjaga keseimbangan "Tiga
+                                Kekuatan Besar".
+
+                                Angkatan Laut awalnya bermarkas di Marineford di Grand Line. Setelah Akainu menjadi
+                                laksamana armada yang baru menggantikan Sengoku, markas Angkatan Laut direlokasi di
+                                Dunia Baru.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <img class="d-block w-100" src="/img/marine-wallpapers.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="card float-right">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img class="d-block w-100" src="/img/Five-Elder.jpg" alt="">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-block">
+                            <h4 class="card-title">Pemerintah Dunia</h4>
+                            <p>Pemerintah Dunia adalah organisasi politik yang terdiri dari mayoritas dunia (yang
+                                dihuni), yang kelihatannya diperintah oleh Gorosei yang pada kenyataannya menjawab
+                                seorang penguasa yang hanya dikenal sebagai Im yang keberadaannya di dalam Pemerintahan
+                                Dunia tidak diketahui dunia secara luas.
+
+                                Didirikan 800 tahun yang lalu. Angkatan Laut berfungsi sebagai organisasi militer utama
+                                mereka, dipimpin oleh Laksamana Armada, sedangkan Cipher Pol beroperasi di belakang
+                                layar, baik melalui sabotase, pengintaian, mata-mata, spionase, dan / atau pembunuhan;
+                                musuh mereka yang paling kuat sebagian besar adalah bajak laut dan revolusioner.
+
+                                Panglima Tertinggi mengawasi baik Angkatan Laut dan Cipher Pol serta Shichibukai,
+                                setidaknya secara resmi, dan peringkat langsung di bawah Gorosei. Impel Down berfungsi
+                                sebagai penjara dengan keamanan maksimum yang paling tidak dapat ditembus oleh
+                                Pemerintah Dunia.
+
+                                Secara kolektif berfungsi sebagai antagonis paling menonjol dalam seri ini, Pemerintah
+                                Dunia sebagian besar digambarkan sebagai entitas yang korup, terutama melalui penerapan
+                                keadilan mutlak, penindasan penelitian ke dalam Abad Kekosongan, dan kebobrokan
+                                Bangsawan Dunia aristokrat.</p>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+            <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+                <div class="row">
+                    <div class="col-lg-3 mb-3">
+                        <p class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+                            href="/" aria-label="Bootstrap">
+                            <span class="fs-5">Tugas Akhir</span>
+                        </p>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2">Ahmad Muzakki Aley</a></li>
+                            <li class="mb-2">41226430</a></li>
+                            <li class="mb-2">TI REG P2</li>
+                            <li class="mb-2"><a href="http://123456789">Whatsapp</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="/">Home</a></li>
+                            <li class="mb-2"><a href="/karakter.html">karakter</li>
+                            <li class="mb-2"><a href="/cerita.html">Cerita</a></li>
+                            <li class="mb-2"><a href="/organisasi.html">Organisasi</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5>Source</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a
+                                    href="https://onepiece.fandom.com/id/wiki/Halaman_Utama">onepiece.fandom</a></li>
+                            <li class="mb-2"><a href="https://id.wikipedia.org/wiki/wikipedia">Onepiece.wikipedia</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-3">
+                        <h5>Situs Resmi</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap" target="_blank"
+                                    rel="noopener">Web One Piece</a> - Situs resmi One Piece.</li>
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev" target="_blank"
+                                    rel="noopener">One Piece Official</a> - FUNimation situs resmi One Piece.</li>
+                            <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank" rel="noopener">One
+                                    Piece Anime</a> - Toei Animation situs resmi anime One Piece.</li>
+                            <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank" rel="noopener">One
+                                    Piece Manga</a> - situs resmi manga One Piece Jepang.</li>
+                            <li class="mb-2"><a href="https://github.com/twbs/examples/" target="_blank"
+                                    rel="noopener">One Piece Manga</a> - Viz Media situs resmi manga One Piece.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="/assets/js/bootstrap.js"></script>
+</body>
+
+</html>

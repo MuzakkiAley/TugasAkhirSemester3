@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas Akhir</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <style>
+        body {
+            background-image: url('/img/lupiVSkaido.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: rgb(12, 12, 12);
+            text-align: center;
+            margin-top: 40px;
+            z-index: 0;
+            padding: 10px 15px;
+            border: 3px solid #000000;
+            outline: none;
+            transition: outline 0.5s ease-in-out;
+        }
+
+        h1:hover {
+            outline: 1px solid #000000;
+        }
+
+        .banner {
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lupi-image {
+            transform: scale(1.1);
+            transition: transform 9.5s ease;
+        }
+
+        .gembung-image {
+            cursor: pointer;
+            transition: transform 1.5s ease;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- navbar mulai-->
+    <div class="header">
+        <div class="container-fluid gx-0">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="/img/logoo.png" alt="Bootstrap" width="120px"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" style="color: white;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold " aria-current="page" href="#"
+                                    style="color: rgb(0, 0, 0); margin-right: 2rem;">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold " href="karakter.html"
+                                    style="color: white; margin-right: 2rem;">karakter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="cerita.html"
+                                    style="color: white; margin-right: 2rem;">cerita</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="organisasi.html"
+                                    style="color: white; margin-right: 2rem;">organisasi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold" href="about.html" style="color: white;">about</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <section class="banner">
+            <h1>WELC<span><img src="/img/logo.png" alt="" style="width: 60px;"></span>ME</h1>
+        </section>
+        <!-- lupi ketawa -->
+        <div class="text-center">
+            <img src="/img/cropped-5120-2880-1325389.png" alt="" class="gembung-image img-fluid"
+                style="width: 120px; margin-top: 200px; margin-right: 900px;">
+        </div>
+    </div>
+    <!-- narbar selesai -->
+
+
+
+    <!-- suara dan animasi -->
+    <script>
+        $(document).ready(function () {
+            var image = $(".gembung-image");
+
+            var audio = new Audio('assets/Luffy laughing Gear 5.mp3');
+
+            image.click(function () {
+                image.toggleClass('lupi-image');
+
+                audio.play();
+
+                setTimeout(function () {
+                    image.toggleClass('lupi-image');
+                }, audio.duration * 1000 + 500);
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+</body>
+
+</html>
